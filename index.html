@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/style.css" />
     <link rel="stylesheet" href="/assets/typo.css" />
-    <link rel="stylesheet" href="/assets/form.css" />
-    <link rel="stylesheet" href="/assets/nav.css">
+    <!-- <link rel="stylesheet" href="/assets/form.css" /> -->
+    <link rel="stylesheet" href="/assets/nav.css" />
     <title>Développeur Symfony</title>
   </head>
   <body>
@@ -24,12 +24,12 @@
       </h1>
       <p>Découvrez les bases de Symfony, Twig et SQL.</p>
     </header>
-    <section>
+    <section >
       <h2>
         Symfony: <br />
         Pour les applications web et les microservices.
       </h2>
-      <div class="container">
+      <div class="container"  id="formulaire">
         <div class="card">
           <div class="container-img">
             <img src="https://picsum.photos/1200?random=1" alt="Symfony" />
@@ -59,17 +59,16 @@
         </div>
       </div>
 
-      <form action="" class="formulaire">
-        
-        <label for="image">Mon image vide</label>
-        <input type="image" id="image">
+      <form action="#" method="get">
+        <label for="image">l'adresse image</label>
+        <input type="lien" id="image"  required/>
         <label for="titre">Mon Titre</label>
-        <input type="text" id="titre">
+        <input type="text" id="titre" required />
         <label for="text">paragraph</label>
-        <input type="text" id="text">
-        <button id="btn1">Ajouter</button>
-        <button id="btn2">Effacer</button>
-   
+        <input type="text" id="text" required />
+        <button id="btn" type="reset">Reset</button>
+        <button id="btn1" type="submit">Ajouter</button>
+        <button id="btn2" type="submit">Effacer</button>
       </form>
     </section>
 
@@ -289,6 +288,6 @@
     <footer>
       <p>&copy; 2025 - Développeur Symfony</p>
     </footer>
-    <script src="/assets/app.js"></script>
+    <script src="assets/app.js"></script>
   </body>
 </html>

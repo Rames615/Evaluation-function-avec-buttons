@@ -61,6 +61,9 @@ form {
   width: 60%;
   padding: 25px;
   gap: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #333333;
+  border-radius: 10px;
 }
 
 label {

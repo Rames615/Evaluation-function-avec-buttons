@@ -66,3 +66,7 @@ function hideDiv() {
     hideSec.style.display = "none";
 }
 buttonAccept.addEventListener('click', hideDiv);
+
+// buttonAccept.addEventListener('click', ()=>
+// hideSec.style.display = "none"
+// );

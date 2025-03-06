@@ -1,9 +1,11 @@
-console.log('hello world');
+
 const button = document.getElementById('btn');
 const button1 = document.getElementById('btn1');
 const button2 = document.getElementById('btn2');
 const form = document.querySelector('#formulaire');
-//const form = document.querySelector('form');
+const descriptionV = document.querySelector('#description');
+const titreV = document.querySelector('#titre');
+const imageV = document.querySelector('#image');
 
 // way to reset the filled form
 
@@ -12,26 +14,35 @@ button.addEventListener('click', function() {
   });
   
 
-function addCard(e){
-    e.preventDefault();
+function addCard(){
+    // e.preventDefault();
 const card = document.createElement('div');
 card.className = 'card';
-
+form.appendChild(card);
 const image = document.createElement('img');
-// const image = document.querySelector('#image');
- image.src =image.value //"https://picsum.photos/1200?random=4";
-
-const paragraph = document.createElement('p');
- paragraph.textContent = //"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
-
-card.appendChild(titre);
+image.src = imageV.value ;
 card.appendChild(image);
 
-card.appendChild(paragraph);
-form.appendChild(card);
+const titre = document.createElement('h3');
+titre.textContent = titreV.value;
+card.appendChild(titre);
+
+const paragraph = document.createElement('p');
+ paragraph.textContent = descriptionV.value;
+ card.appendChild(paragraph);
+
 }
 
-button1.addEventListener('click',addCard);
+// button1.addEventListener('click',addCard);
+button1.addEventListener('click', function(e){
+    e.preventDefault();
+    if (imageV.value && titreV.value && descriptionV.value){
+        addCard();
+    } else {
+        alert('Aucune carte à supprimer !');
+    }
+});
+
 
 function removeCard(e) {
     e.preventDefault();
@@ -46,3 +57,12 @@ function removeCard(e) {
 
 button2.addEventListener('click',removeCard);
 
+
+const buttonAccept = document.getElementById("accepter");
+const buttonSet = document.getElementById("paramettre");
+const hideSec = document.getElementById("hide");
+
+function hideDiv() {
+    hideSec.style.display = "none";
+}
+buttonAccept.addEventListener('click', hideDiv);

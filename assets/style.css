@@ -67,6 +67,7 @@ section {
   justify-content: center;
   padding: 15px;
   background-color: #ddd;
+  
 }
 
 .container {
@@ -103,7 +104,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80%;
+  justify-content: space-around;
   width: 100%;
   background: #0f9ca9;
   margin-bottom: 20px;

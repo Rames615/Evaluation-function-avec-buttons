@@ -81,12 +81,13 @@ input {
 
 button {
   margin-top: 10px;
-  padding: 10px;
+  padding: 1rem;
   border: none;
   background: #268e03;
   color: white;
   font-size: 16px;
-  border-radius: 4px;
+  border-radius: 10px;
+  border: none;
   cursor: pointer;
 }
 

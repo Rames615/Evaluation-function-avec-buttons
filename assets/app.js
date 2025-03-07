@@ -70,3 +70,15 @@ buttonAccept.addEventListener('click', hideDiv);
 // buttonAccept.addEventListener('click', ()=>
 // hideSec.style.display = "none"
 // );
+
+//todo : change the size of the div according to cursor's movement
+
+const div = document.getElementById("changeSize");
+
+const screenWidth = window.innerWidth;
+
+div.addEventListener("mousemove", (event) => {
+    let newWidth = (event.clientX / screenWidth) * 100; // Convert to percentage
+    div.style.width = newWidth + "%"; // Apply width dynamically
+});
+  

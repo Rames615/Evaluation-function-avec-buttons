@@ -71,14 +71,32 @@ buttonAccept.addEventListener('click', hideDiv);
 // hideSec.style.display = "none"
 // );
 
-//todo : change the size of the div according to cursor's movement
+//todo : change the horizontal size of the div according to cursor's movement
 
-const div = document.getElementById("changeSize");
+const zoomSection = document.getElementById('zoom');
 
-const screenWidth = window.innerWidth;
+// Variable to store the current zoom level (default is 1)
+let zoomLevel = 1;
 
-div.addEventListener("mousemove", (event) => {
-    let newWidth = (event.clientX / screenWidth) * 100; // Convert to percentage
-    div.style.width = newWidth + "%"; // Apply width dynamically
+// Add event listener to the section for mousewheel scroll
+zoomSection.addEventListener('wheel', (event) => {
+  // Check if the scroll is up or down
+  if (event.deltaY < 0) {
+    // Zoom in (scale up)
+    zoomLevel += 0.1;
+  } else {
+    // Zoom out (scale down)
+    zoomLevel -= 0.1;
+  }
+
+  // Set a limit to zoom (optional)
+  if (zoomLevel < 0.5) zoomLevel = 0.5;  // Minimum zoom
+  if (zoomLevel > 2) zoomLevel = 2;      // Maximum zoom
+
+  // Apply the zoom using CSS transform property
+  zoomSection.style.transform = `scale(${zoomLevel})`;
+  zoomSection.style.transformOrigin = 'center'; // Keep the zooming centered
+
+  // Prevent default scroll behavior to avoid page scroll
+  event.preventDefault();
 });
-  
